@@ -1,0 +1,47 @@
+README file - ECE1756 Assignment3 RAM mapper(Linux)
+- developer:	Zhiyuan Gu
+- date: 	Nov 28, 2019
+
+1.File list
+-----------------
+main.cpp
+RAM_mapper.cpp
+RAM_mapper.h
+Circuit.cpp
+Circuit.h
+logicRAM.cpp
+logicRAM.h
+Solution.cpp
+Solution.h
+Architecture.cpp
+Architecture.h
+checker
+makefile
+README
+logic_rams.txt
+logic_block_count.txt
+
+
+2. Steps to compile and run the RAM mapper for Stratix IV-like architecture
+---------------------------------------------------------------------------
+1) Type "make" in the source file folder to compile the code.
+	(to run on ECF machines, type "scl enable devtoolset-8 'bash'" first to enable a better compiler)
+	
+2) Type "./RM" to run the executable. Mapping result will be stored in "mapping_result.txt".
+	When you are asked to enter architecture number:
+	Enter 1 performs mapping for Stratix IV-like architecture.	
+	Enter 4 performs mapping for architecture of my own choice to map the benchmark circuits better.
+	Enter 5 performs mapping for architecture with MTJ RAMs and also of my own choice to map the benchmark circuits better.
+	Enter 2 performs mapping test for architecture with no LUTRAM and only one type of block RAM with varying size.
+	Enter 3 performs mapping test for architecture with 50% of logic blocks supporting LUTRAM and only one type of block RAM with varying size.	
+	
+3) To run the checker program for architecture 1, type "./checker -d -t logical_rams.txt logic_block_count.txt mapping_result.txt".
+	For architecture4, type "./checker -t -l 66 10 -b 4096 16 12 1 -b 32768 32 36 1 logical_rams.txt logic_block_count.txt mapping_result.txt". 
+	For architecture5, type "./checker -l 603 100 -b 4096 16 10 1 -b 65536 32 36 1 logical_rams.txt logic_block_count.txt mapping_result.txt". 
+	(Type "chmod +x checker" and try again if permission was denied)
+	
+4) Detailed information is shown in the terminal.
+
+
+
+Thank you for reading!

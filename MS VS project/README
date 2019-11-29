@@ -1,0 +1,43 @@
+README file - ECE1756 Assignment3 RAM mapper(Windows)
+- developer:	Zhiyuan Gu
+- date: 	Nov 28, 2019
+
+1.File list
+-----------------
+main.cpp
+RAM_mapper.cpp
+RAM_mapper.h
+Circuit.cpp
+Circuit.h
+logicRAM.cpp
+logicRAM.h
+Solution.cpp
+Solution.h
+Architecture.cpp
+Architecture.h
+checker.exe
+RAM_mapper.sln
+README
+logic_rams.txt
+logic_block_count.txt
+
+
+2. Steps to build and run the RAM mapper in Visual Studio(I am using Visual Studio Community 2017)
+---------------------------------------------------------------------------------------------------
+1) Build-->Build Solution	
+	
+2) Debug-->Start Debugging
+	RAM mapper starts running.
+	
+3) When you are asked to enter architecture number:
+	Enter 1 performs mapping for Stratix IV-like architecture.	
+	Enter 4 performs mapping for architecture of my own choice to map the benchmark circuits better.
+	Enter 5 performs mapping for architecture with MTJ RAMs and also of my own choice to map the benchmark circuits better.
+	Enter 2 performs mapping test for architecture with no LUTRAM and only one type of block RAM with varying size.
+	Enter 3 performs mapping test for architecture with 50% of logic blocks supporting LUTRAM and only one type of block RAM with varying size.	
+	
+4) Checker is automatically called and detailed information is shown in the terminal.
+	(Note that the checker result for architecture 5 is different from what is calculated by the mapper because MTJ RAM was not specified to the checker)
+
+
+Thank you for reading!
